@@ -1,7 +1,10 @@
 Vagrant.configure("2") do |config|
   config.vm.box = "debian/bookworm64"
 
-  # Expose ports
+  # Expose Nomad Web UI
+  config.vm.network "forwarded_port", guest: 4646, host: 4646, host_ip: "127.0.0.1"
+
+  # Expose application ports
   config.vm.network "forwarded_port", guest: 80, host: 8080, host_ip: "127.0.0.1"
 
   config.vm.provider "virtualbox" do |vb|
