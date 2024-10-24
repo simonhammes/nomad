@@ -15,7 +15,7 @@ job "nginx" {
             driver = "docker"
 
             config {
-                image = "nginx:1.25"
+                image = "nginx:1.27.2"
                 # TODO: Is this the correct solution?
                 network_mode = "host"
                 ports = ["web"]
