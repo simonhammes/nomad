@@ -9,16 +9,17 @@ vagrant up
 
 vagrant ssh
 
+# Inside VM
 nomad status
 ```
 
 ### nginx.nomad.hcl
 ```bash
+# Inside VM
 nomad run /vagrant/jobs/nginx.nomad.hcl
-
 nomad status
 
-# VM
+# Inside VM
 curl localhost:80 -I
 
 # Host
